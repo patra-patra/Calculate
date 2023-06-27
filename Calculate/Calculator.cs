@@ -20,6 +20,9 @@ namespace Calculate
         
         float first, last;
         int sign;
+        float memory = 0;
+        int top = 10;
+       int left = 10;
 
         public Calculator()
         {
@@ -30,12 +33,7 @@ namespace Calculate
         {
 
         }
-        /*
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        */
+        
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + 1;
@@ -145,6 +143,57 @@ namespace Calculate
         {
             textBox1.Text = "";
             label1.Text = "";
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            memory = 0;
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = memory.ToString();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            memory += float.Parse(textBox1.Text);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            memory -= float.Parse(textBox1.Text);
+        }
+
+        private void button19_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            last = 0;
+            textBox1.Text = "";
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void calculate()
