@@ -264,7 +264,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.GhostWhite;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 24);
             this.label1.TabIndex = 17;
