@@ -14,15 +14,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace Calculate
 {
     public partial class Calculator : Form
-    {
-
-
-        
+    {   
         float first, last;
         int sign;
         float memory = 0;
         int top = 10;
-       int left = 10;
+        int left = 10;
 
         public Calculator()
         {
@@ -152,12 +149,14 @@ namespace Calculate
 
         private void button24_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = (float.Parse(textBox1.Text) * float.Parse(textBox1.Text)).ToString();
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
             memory = 0;
+            textBox2.Text = memory.ToString();
+
         }
 
         private void button22_Click(object sender, EventArgs e)
@@ -168,21 +167,23 @@ namespace Calculate
         private void button17_Click(object sender, EventArgs e)
         {
             memory += float.Parse(textBox1.Text);
+            textBox2.Text = memory.ToString();
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
             memory -= float.Parse(textBox1.Text);
+            textBox2.Text = memory.ToString();
         }
 
         private void button19_Click_1(object sender, EventArgs e)
         {
-
+            textBox1.Text = (1/float.Parse(textBox1.Text)).ToString();
         }
 
         private void button26_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = (first/ 100 * int.Parse(textBox1.Text)).ToString();
         }
 
         private void button27_Click(object sender, EventArgs e)
@@ -193,7 +194,57 @@ namespace Calculate
 
         private void button28_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text.Length > 1)
+            {
+                textBox1.Text = textBox1.Text.Trim(textBox1.Text[textBox1.Text.Length - 1]);
+            }
+            else
+            {
+                textBox1.Text = 0.ToString();
+            }
+            
+        }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = Math.Sqrt(float.Parse(textBox1.Text)).ToString();
+        }
+
+        int c = 0;
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            
+            if (c == 0)
+            {
+                textBox2.Visible = true;
+                c++;
+            }
+            else
+            {
+                textBox2.Visible = false;
+                c--;
+            }
+
+
+            textBox2.Text = memory.ToString();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            memory = int.Parse(textBox1.Text);
+            textBox2.Text = memory.ToString();
+        
         }
 
         private void calculate()
